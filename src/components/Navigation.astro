@@ -1,13 +1,15 @@
 ---
+export interface NavItem {
+  href: string
+  text: string
+}
+const pages: NavItem[] = [{href:"/",text:"Home"},{href: "/demos/tables",text:"Tables Demo"}]
 ---
 
 <header>
   <nav>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li>
-        <a href="/demos/tables">Tables Demo</a>
-      </li>
+      {pages.map(x=><li><a href={x.href}>{x.text}</a></li>)}
     </ul>
   </nav>
 </header>

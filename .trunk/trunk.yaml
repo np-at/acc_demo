@@ -15,6 +15,48 @@ lint:
     - svgo@3.0.2
     - prettier@2.8.1
     - git-diff-check
+  files:
+    - name: astro
+      extensions:
+        - astro
+  definitions:
+    - name: eslint
+      type: eslint
+      files:
+        - typescript
+        - javascript
+        - astro
+      command:
+        - eslint
+        - --output-file
+        - ${tmpfile}
+        - --format
+        - json
+        - ${target}
+      error_codes:
+        - 2
+      affects_cache:
+        - .eslintignore
+        - package.json
+        - tsconfig.json
+      batch: true
+      direct_configs:
+        - .eslintrc
+        - .eslintrc.cjs
+        - .eslintrc.js
+        - .eslintrc.json
+        - .eslintrc.yaml
+        - .eslintrc.yml
+      enabled: true
+      issue_url_format: https://eslint.org/docs/rules/{}
+      known_good_version: 8.10.0
+      package: eslint
+      plugin_url: https://slack.trunk.io
+      read_output_from: tmp_file
+      runtime: node
+      version_command:
+        parse_regex: ${semver}
+        run: eslint --version
 runtimes:
   enabled:
     - go@1.18.3
