@@ -13,5 +13,15 @@
   "dependencies": {
     "astro": "^1.7.1",
     "sass": "1.57.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.30.0",
+    "eslint-plugin-astro": "^0.21.1",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.11",
+    "prettier": "^2.8.1",
+    "prettier-plugin-astro": "^0.7.0"
   }
 }
