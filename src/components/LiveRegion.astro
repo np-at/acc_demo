@@ -1,0 +1,30 @@
+---
+// random text
+
+---
+
+<div aria-live="assertive">
+    <span id="live-region"></span>
+</div>
+<script>
+    // random text generator
+    function generateRandomText() {
+        const randomText = [];
+        const randomLength = Math.floor(Math.random() * 10) + 1;
+        for (let i = 0; i < randomLength; i++) {
+            randomText.push(Math.random().toString(36).substring(2, 15));
+        }
+        return randomText.join(' ');
+    }
+
+    setInterval(() => {
+        try {
+            (document.getElementById('live-region') as HTMLSpanElement).innerText = `poop ${generateRandomText()}`
+
+        } catch (e) {
+            console.error(e);
+            clearInterval(this);
+        }
+    }, 6000);
+    (document.getElementById('live-region') as HTMLSpanElement)
+</script>
